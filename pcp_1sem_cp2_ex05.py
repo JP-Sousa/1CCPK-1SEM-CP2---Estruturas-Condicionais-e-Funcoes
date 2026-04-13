@@ -76,39 +76,37 @@ em pagamentos previsíveis e iguais.
 
 
 def pode_aprovar(idade, renda, valor):
-    if idade>18 and valor<20*renda:
+    if idade > 18 and valor < 20 * renda:
         print("Financiamento Aprovado")
         return True
     else:
         print("Financiamento Negado")
         return  False
 
-
-
 def definir_taxa(parcelas):
-    if parcelas <6:
+    if parcelas <= 6:
         return 0.05
-    elif parcelas >12:
+    elif parcelas > 12:
         return 0.1
     else:
         return 0.08
 
 def calcular_parcela(valor, taxa, parcelas):
-    return valor* (taxa*((1+taxa)**parcelas)/((1+taxa)**(parcelas-1)))
+    return valor * (taxa * ((1 + taxa)**parcelas)/((1 + taxa)**(parcelas - 1)))
 
 def calcular_total(parcela, parcelas):
-    return parcela*parcelas
+    return parcela * parcelas
 
 def calcular_juros(total, valor):
-    return total-valor
+    return total - valor
 
 def exibir_final(nome_cliente,valor,taxa,val_parcela,total,juros):
-    print(f"Nome do cliente: {nome_cliente}")
-    print(f"Valor financiado: R${valor:.2f}")
-    print(f"Taxa de Juros Aplicada: {taxa}")
-    print(f"Valor da parcela: {val_parcela}")
-    print(f"Total à ser pago: {total}")
-    print(f"Total de Juros: {juros}")
+    print(f"\nNome do cliente: {nome_cliente}")
+    print(f"Valor financiado: R$ {valor:.2f}")
+    print(f"Taxa de Juros Aplicada: {taxa*100:.0f}%")
+    print(f"Valor da parcela: R$ {val_parcela:.2f}")
+    print(f"Total à ser pago: R$ {total:.2f}")
+    print(f"Total de Juros: R$ {juros:.2f}")
 
 nome = input("Digite seu nome: ")
 idade = int(input("Digite sua idade: "))
@@ -117,6 +115,7 @@ emprestimo = float(input("Digite o valor do empréstimo desejado: "))
 qntd_parcelas = int(input("Digite a quantidade de parcelas (entre 3 à 24): "))
 
 aprovado = pode_aprovar(idade,renda,emprestimo)
+
 if aprovado:
     taxa = definir_taxa(qntd_parcelas)
     parcela = calcular_parcela(emprestimo,taxa,qntd_parcelas)
