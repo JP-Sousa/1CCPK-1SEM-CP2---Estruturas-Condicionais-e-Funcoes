@@ -1,8 +1,9 @@
-# 1CC-1SEM-CP2---Esturutra-Condicional-e-Fun-es
+# 1CC-1SEM-CP2---Estrutura-Condicional-e-Funções
+
 Repósito para o Checkpoint 02 - Pensamento Computacional
 
-Matheus Evangelista - RM: Silva	568593  
-Augusto de Souza Ávila - RM: 570839  
-João Pedro Sousa - RM: 573962  
+Augusto de Souza Ávila - RM: 570839   
 Davi Simoncelo - RM: 571738  
-Murilo Lima	- RM: 570156  
+João Pedro Sousa - RM: 573962  
+Matheus Evangelista Silva- RM:	568593  
+Murilo Lima	de Carvalho - RM: 570156  
