@@ -1,5 +1,4 @@
-"""
-Exercício 5
+"""Exercício 5
 
 Você foi contratado para desenvolver um sistema simples de um banco que analisa e calcula um financiamento com parcelas fixas.
 Requisitos:
@@ -70,17 +69,18 @@ de amortização (pagamento da dívida). No início, paga-se mais juros; no fina
 paga-se mais da dívida.
 Por isso, essa fórmula é amplamente usada em financiamentos de carros, imóveis
 e empréstimos em geral: ela permite organizar uma dívida com juros compostos
-em pagamentos previsíveis e iguais.
-"""
+em pagamentos previsíveis e iguais."""
 
 
 
 def pode_aprovar(idade, renda, valor):
-    if idade > 18 and valor < 20 * renda:
+    if idade > 18 and valor <= 20 * renda:
         print("Financiamento Aprovado")
+
         return True
     else:
         print("Financiamento Negado")
+
         return  False
 
 def definir_taxa(parcelas):
@@ -92,7 +92,7 @@ def definir_taxa(parcelas):
         return 0.08
 
 def calcular_parcela(valor, taxa, parcelas):
-    return valor * (taxa * ((1 + taxa)**parcelas)/((1 + taxa)**(parcelas - 1)))
+    return valor * (taxa * ((1 + taxa)**parcelas)) / (((1 + taxa)**parcelas) - 1)
 
 def calcular_total(parcela, parcelas):
     return parcela * parcelas
@@ -102,11 +102,11 @@ def calcular_juros(total, valor):
 
 def exibir_final(nome_cliente,valor,taxa,val_parcela,total,juros):
     print(f"\nNome do cliente: {nome_cliente}")
-    print(f"Valor financiado: R$ {valor:.2f}")
-    print(f"Taxa de Juros Aplicada: {taxa*100:.0f}%")
-    print(f"Valor da parcela: R$ {val_parcela:.2f}")
-    print(f"Total à ser pago: R$ {total:.2f}")
-    print(f"Total de Juros: R$ {juros:.2f}")
+    print(f"Valor financiado: R$ {valor:,.2f}")
+    print(f"Taxa de Juros Aplicada: {taxa * 100:.0f}%")
+    print(f"Valor da parcela: R$ {val_parcela:,.2f}")
+    print(f"Total à ser pago: R$ {total:,.2f}")
+    print(f"Total de Juros: R$ {juros:,.2f}")
 
 nome = input("Digite seu nome: ")
 idade = int(input("Digite sua idade: "))
@@ -114,11 +114,12 @@ renda = float(input("Digite sua renda mensal: "))
 emprestimo = float(input("Digite o valor do empréstimo desejado: "))
 qntd_parcelas = int(input("Digite a quantidade de parcelas (entre 3 à 24): "))
 
-aprovado = pode_aprovar(idade,renda,emprestimo)
+aprovado = pode_aprovar(idade, renda, emprestimo)
 
 if aprovado:
     taxa = definir_taxa(qntd_parcelas)
-    parcela = calcular_parcela(emprestimo,taxa,qntd_parcelas)
-    total = calcular_total(parcela,qntd_parcelas)
-    juros = calcular_juros(total,emprestimo)
-    exibir_final(nome,emprestimo,taxa,parcela,total,juros)
+    parcela = calcular_parcela(emprestimo, taxa, qntd_parcelas)
+    total = calcular_total(parcela, qntd_parcelas)
+    juros = calcular_juros(total, emprestimo)
+
+    exibir_final(nome, emprestimo, taxa, parcela, total, juros)

@@ -1,8 +1,10 @@
 """04. (2,5 pontos)
 Você foi contratado para criar um sistema de RH que calcula o salário final de um
 funcionário com base em diversos fatores: cargo, horas extras, faltas, bônus e
-descontos.
+descontos
+
 Requisitos:
+
 1. O programa deve solicitar:
 o Nome do funcionário
 o Cargo (1-Gerente, 2-Analista, 3-Assistente, 4-Estagiário)
@@ -10,7 +12,9 @@ o Salário base (float)
 o Total de horas extras trabalhadas
 o Total de faltas no mês
 o Se recebeu bônus por desempenho (s ou n)
+
 2. Regras de cálculo:
+
 o Valor da hora extra:
 ▪ 1.5% do salário base por hora extra
 o Desconto por falta:
@@ -20,14 +24,18 @@ o Bônus (se aplicável):
 ▪ Analista: R$ 500
 ▪ Assistente: R$ 300
 ▪ Estagiário: R$ 100
+
 3. O sistema deve:
 o Calcular e mostrar:
 ▪ Salário bruto
 ▪ Total de acréscimos (horas extras + bônus)
 ▪ Total de descontos (faltas)
 ▪ Salário final
+
 Regras de Implementação:
+
 • Crie funções como:
+
 o def calcular_horas_extras(salario_base, horas):
 o def calcular_descontos_faltas(salario_base, faltas):
 o def calcular_bonus(cargo, recebeu_bonus)"""

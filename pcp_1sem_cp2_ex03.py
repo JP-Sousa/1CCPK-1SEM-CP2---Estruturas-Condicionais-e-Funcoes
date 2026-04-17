@@ -1,7 +1,8 @@
 """03. (2,0 pontos)
-Uma instituição de ensino avalia seus alunos ao longo do semestre com base em
-diferentes atividades.
+Uma instituição de ensino avalia seus alunos ao longo do semestre com base em diferentes atividades.
+
 Requisitos:
+
 1. O programa deve solicitar:
 o Nota do Checkpoint 1 (cp1)
 o Nota do Checkpoint 2 (cp2)
@@ -9,15 +10,21 @@ o Nota do Checkpoint 3 (cp3)
 o Nota da Sprint 1 (sp1)
 o Nota da Sprint 2 (sp2)
 o Nota da Global Solution (gs)
+
 2. O programa deve solicitar:
+
 o Todas as notas variam de 0 a 10 e podem ser decimais
 o O sistema deve identificar a menor nota entre os três checkpoints
 o A menor nota deve ser desconsiderada no cálculo
+
 3. A composição da média segue os seguintes pesos:
+
 o 40% → média dos 2 maiores Checkpoints + 2 Sprints
 o 60% → nota da Global Solution
 o 40% → média do 1º semestre
+
 4. Cálculo da média:
+
 o A média do semestre deve ser calculada utilizando:
 ▪ As duas maiores notas dos checkpoints
 ▪ As duas notas das sprints
@@ -48,7 +55,7 @@ if notacp2 < menor:
 elif notacp3 < menor:
     menor = notacp3
 
-media_semestre = ((notacp1 + notasp2 + notacp3 - menor + notasp1 + notasp2) / 4) * 0.4 + (notags * 0.6)
+media_semestre = ((notacp1 + notacp2 + notacp3 - menor + notasp1 + notasp2) / 4) * 0.4 + (notags * 0.6)
 
 media_peso = media_semestre * 0.4
 
