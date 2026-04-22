@@ -1,4 +1,4 @@
-"""03. (2,0 pontos)
+"""03. (2,0 pontos) 
 Uma instituição de ensino avalia seus alunos ao longo do semestre com base em diferentes atividades.
 
 Requisitos:

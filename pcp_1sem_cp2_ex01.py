@@ -47,11 +47,10 @@ def caminhao(preco_kg, peso_carga_toneladas, imposto):
     valor_imposto = preco_total * (imposto / 100)
     valor_final = preco_total - valor_imposto
 
-    print(f"\nO Peso total do caminhão em Quilogramas é: {peso_kg:.2f} K")
+    print(f"\nO peso total do caminhão em quilogramas é: {peso_kg:.2f} Kg")
     print(f"O preço da carga sem imposto é: R$ {preco_total:,.2f}")
     print(f"O percentual de imposto é: {imposto:}%")
     print(f"O valor final que será recebido é: R$ {valor_final:,.2f}")
-
 
 cod_estado = int(input("Digite o código do estado (entre 1 à 5): "))
 cod_carga = int(input("Digite o código de carga (entre 10 à 40): "))
@@ -59,4 +58,5 @@ peso_ton = float(input("Digite o peso em tonelada: "))
 
 taxa_imposto = calculo_imposto(cod_estado)
 preco_carga = calculo_preco_kg(cod_carga)
+
 caminhao(preco_carga, peso_ton, taxa_imposto)

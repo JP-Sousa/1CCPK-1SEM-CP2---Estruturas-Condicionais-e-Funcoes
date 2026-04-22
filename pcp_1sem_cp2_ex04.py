@@ -46,16 +46,18 @@ def calc_horas_extras(salario_base, total_horas):
 def calc_desconto_falta(salario_base, num_faltas):
     return salario_base * (0.02 * num_faltas)
 
-def calc_bonus(cargo):
-    match cargo:
-        case 1:
-            return 1000
-        case 2:
-            return 500
-        case 3:
-            return 300
-        case 4:
-            return 100
+def calc_bonus(cargo, bonus):
+
+    if bonus == "s":
+        match cargo:
+            case 1:
+                return 1000
+            case 2:
+                return 500
+            case 3:
+                return 300
+            case 4:
+                return 100
 
     return  0
 
@@ -64,22 +66,19 @@ def calc_salario(salario_base, acre, desc):
 
 nome = input("Digite o nome do funcionário: ")
 cargo = int(input("Insira o cargo do funcionário: \n\n1-Gerente\n2-Analista\n3-Assistente\n4-Estagiário\n\n"))
-salarioBase = float(input("Digite o salário base do funconário: "))
-totalHrsExtras = int(input("Total de horas extras: "))
+salario_base = float(input("Digite o salário base do funconário: "))
+total_hrs_extras = int(input("Total de horas extras: "))
 faltas = int(input("Total de faltas no mês: "))
 bonus = input("Bônus por desempenho? (s ou n): ")
 
-if bonus == "s":
-    acrescimos = calc_horas_extras(salarioBase, totalHrsExtras) + calc_bonus(cargo)
-else:
-    acrescimos = calc_horas_extras(salarioBase, totalHrsExtras)
+acrescimos = calc_horas_extras(salario_base, total_hrs_extras) + calc_bonus(cargo, bonus)
 
-descontos = calc_desconto_falta(salarioBase, faltas)
+descontos = calc_desconto_falta(salario_base, faltas)
 
-salarioLiquido = calc_salario(salarioBase, acrescimos, descontos)
+salario_liquido = calc_salario(salario_base, acrescimos, descontos)
 
 print("Funcionário:         ", nome)
-print(f"Salário bruto:      R$ {salarioBase:.2f}")
+print(f"Salário bruto:      R$ {salario_base:.2f}")
 print(f"Total acrescimos:   R$ {acrescimos:.2f}")
 print(f"Total descontos:    R$ {descontos:.2f}")
-print(f"Salário liquído:    R$ {salarioLiquido:.2f}")
+print(f"Salário líquido:    R$ {salario_liquido:.2f}")

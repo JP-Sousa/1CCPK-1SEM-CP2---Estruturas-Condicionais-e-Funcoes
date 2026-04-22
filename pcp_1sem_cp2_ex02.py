@@ -32,7 +32,10 @@ def triangulo(lado_A, lado_B, lado_C):
     if lado_A >= lado_B + lado_C:
         print(f"{lado_A} >= {lado_B + lado_C}")
         print("Não forma triângulo")
-    elif lado_A**2 == lado_B**2 + lado_C**2:
+
+        return
+    
+    if lado_A**2 == lado_B**2 + lado_C**2:
         print("Triângulo Retângulo")
     elif lado_A**2 > lado_B**2 + lado_C**2:
         print("Triângulo Obtusângulo")
@@ -41,7 +44,7 @@ def triangulo(lado_A, lado_B, lado_C):
 
     if lado_A == lado_B and lado_C == lado_B:
         print("Triângulo Equilátero")
-    elif lado_A == lado_B or lado_A == lado_B or lado_B == lado_C:
+    elif lado_A == lado_B or lado_A == lado_C or lado_B == lado_C:
         print("Triângulo Isóceles")
 
 A = float(input("Digite o primeiro Lado: "))

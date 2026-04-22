@@ -105,7 +105,7 @@ def exibir_final(nome_cliente,valor,taxa,val_parcela,total,juros):
     print(f"Valor financiado: R$ {valor:,.2f}")
     print(f"Taxa de Juros Aplicada: {taxa * 100:.0f}%")
     print(f"Valor da parcela: R$ {val_parcela:,.2f}")
-    print(f"Total à ser pago: R$ {total:,.2f}")
+    print(f"Total a ser pago: R$ {total:,.2f}")
     print(f"Total de Juros: R$ {juros:,.2f}")
 
 nome = input("Digite seu nome: ")
