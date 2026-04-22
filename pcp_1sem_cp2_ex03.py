@@ -29,33 +29,34 @@ o A média do semestre deve ser calculada utilizando:
 ▪ As duas maiores notas dos checkpoints
 ▪ As duas notas das sprints
 ▪ A nota da Global Solution
-o Fórmula:
-o 𝑚𝑒𝑑𝑖𝑎 = (
-𝑐𝑝1+𝑐𝑝2+𝑐𝑝3−𝑚𝑒𝑛𝑜𝑟+𝑠𝑝1+𝑠𝑝2
-4
-) ⋅ 0.4 + 𝑔𝑠 ⋅ 0.6
+a Fórmula:
+o 𝑚𝑒𝑑𝑖𝑎 = (𝑐𝑝1 + 𝑐𝑝2 + 𝑐𝑝3 − 𝑚𝑒𝑛𝑜𝑟 + 𝑠𝑝1 + 𝑠𝑝2 / 4) ⋅ 0.4 + 𝑔𝑠 ⋅ 0.6
 o Média com peso:
 ▪ 𝑚𝑒𝑑𝑖𝑎𝑃𝑒𝑠𝑜 = 𝑚𝑒𝑑𝑖𝑎 ⋅ 0.4"""
 
-notacp1 = float(input("Digite a nota do Checkpoint 01 (0 a 10): "))
-notacp2 = float(input("Digite a nota do Checkpoint 02 (0 a 10): "))
-notacp3 = float(input("Digite a nota do Checkpoint 03 (0 a 10): "))
+cp1 = float(input("Digite a nota do Checkpoint 01 (0 a 10): "))
+cp2 = float(input("Digite a nota do Checkpoint 02 (0 a 10): "))
+cp3 = float(input("Digite a nota do Checkpoint 03 (0 a 10): "))
 
-notasp1 = float(input("Digite a nota da Sprint 01 (0 a 10): "))
-notasp2 = float(input("Digite a nota do Sprint 02 (0 a 10): "))
+sp1 = float(input("Digite a nota da Sprint 01 (0 a 10): "))
+sp2 = float(input("Digite a nota do Sprint 02 (0 a 10): "))
 
-notags = float(input("Digite a nota do Global Solutions (0 a 10): "))
+gs = float(input("Digite a nota do Global Solutions (0 a 10): "))
 
-menor = notacp1
+menor = cp1
 
-if notacp2 < menor:
-    menor = notacp2
-    if notacp3 < menor:
-        menor = notacp3
-elif notacp3 < menor:
-    menor = notacp3
+if cp2 < menor:
+    menor = cp2
 
-media_semestre = ((notacp1 + notacp2 + notacp3 - menor + notasp1 + notasp2) / 4) * 0.4 + (notags * 0.6)
+if cp3 < menor:
+    menor = cp3
+
+media_cp = (cp1 + cp2 + cp3 - menor) / 2
+media_sp = (sp1 + sp2) / 2
+
+media_base = (media_cp + media_sp) / 2
+
+media_semestre = (media_base * 0.4) + (gs * 0.6)
 
 media_peso = media_semestre * 0.4
 
