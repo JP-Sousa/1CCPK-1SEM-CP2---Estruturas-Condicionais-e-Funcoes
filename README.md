@@ -1,6 +1,6 @@
 # 1CC-1SEM-CP2---Estrutura-Condicional-e-Funções
 
-Repósito para o Checkpoint 02 - Pensamento Computacional
+Repositório para o Checkpoint 02 - Pensamento Computacional
 
 Augusto de Souza Ávila - RM: 570839   
 Davi Simoncelo - RM: 571738  
